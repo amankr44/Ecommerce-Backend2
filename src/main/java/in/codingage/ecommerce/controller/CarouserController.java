@@ -2,6 +2,7 @@ package in.codingage.ecommerce.controller;
 
 import in.codingage.ecommerce.model.Carouser;
 import in.codingage.ecommerce.service.impl.CarouserServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,7 +10,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/carouser")
 public class CarouserController {
-    CarouserServiceImpl carouserService = new CarouserServiceImpl();
+//    CarouserServiceImpl carouserService = new CarouserServiceImpl();
+
+    @Autowired
+    private CarouserServiceImpl carouserService;
 
     @PostMapping
     public Carouser createCarouser(@RequestBody Carouser carouser){

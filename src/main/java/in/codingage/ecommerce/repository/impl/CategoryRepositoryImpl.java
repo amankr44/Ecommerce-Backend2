@@ -6,11 +6,13 @@ package in.codingage.ecommerce.repository.impl;
 import in.codingage.ecommerce.model.Category;
 
 import in.codingage.ecommerce.repository.CategoryRepository;
+import org.springframework.stereotype.Repository;
 
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class CategoryRepositoryImpl implements CategoryRepository {
     List<Category> categoryList = new ArrayList<>();
 

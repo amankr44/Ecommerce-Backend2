@@ -2,10 +2,12 @@ package in.codingage.ecommerce.repository.impl;
 
 import in.codingage.ecommerce.model.Carouser;
 import in.codingage.ecommerce.repository.CarouserRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class CarouserRepositoryImpl implements CarouserRepository {
     List<Carouser> carouserList = new ArrayList<>();
 

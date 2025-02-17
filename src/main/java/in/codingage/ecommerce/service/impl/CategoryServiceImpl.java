@@ -4,12 +4,18 @@ import in.codingage.ecommerce.model.Category;
 
 import in.codingage.ecommerce.repository.impl.CategoryRepositoryImpl;
 import in.codingage.ecommerce.service.CategoryService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 
 import java.util.List;
 
+@Service
 public class CategoryServiceImpl implements CategoryService {
-    CategoryRepositoryImpl categoryRepository = new CategoryRepositoryImpl();
+//    CategoryRepositoryImpl categoryRepository = new CategoryRepositoryImpl();
+
+    @Autowired
+    CategoryRepositoryImpl categoryRepository;
 
     public Category createCategory(Category category) {
          categoryRepository.createCategory(category);

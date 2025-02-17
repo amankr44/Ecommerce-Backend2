@@ -3,12 +3,17 @@ package in.codingage.ecommerce.service.impl;
 import in.codingage.ecommerce.model.Carouser;
 import in.codingage.ecommerce.repository.impl.CarouserRepositoryImpl;
 import in.codingage.ecommerce.service.CarouserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CarouserServiceImpl implements CarouserService {
-    CarouserRepositoryImpl carouserRepository = new CarouserRepositoryImpl();
+//    CarouserRepositoryImpl carouserRepository = new CarouserRepositoryImpl();
 
+    @Autowired
+    CarouserRepositoryImpl carouserRepository;
 
 
 

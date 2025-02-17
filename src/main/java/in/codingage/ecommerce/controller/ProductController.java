@@ -2,6 +2,7 @@ package in.codingage.ecommerce.controller;
 
 import in.codingage.ecommerce.model.Product;
 import in.codingage.ecommerce.service.impl.ProductServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,8 +11,10 @@ import java.util.List;
 @RequestMapping("/api/v1/product")
 public class ProductController {
 
-    ProductServiceImpl productService = new ProductServiceImpl();
+//    ProductServiceImpl productService = new ProductServiceImpl();
 
+    @Autowired
+    private ProductServiceImpl productService;
 
     @PostMapping
     public Product createProduct(@RequestBody Product product){

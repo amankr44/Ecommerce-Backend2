@@ -2,10 +2,12 @@ package in.codingage.ecommerce.repository.impl;
 
 import in.codingage.ecommerce.model.Product;
 import in.codingage.ecommerce.repository.ProductRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class ProductRepositoryImpl implements ProductRepository {
 
     List<Product> productList = new ArrayList<>();

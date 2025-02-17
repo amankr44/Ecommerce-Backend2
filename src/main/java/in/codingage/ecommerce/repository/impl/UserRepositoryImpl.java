@@ -2,10 +2,13 @@ package in.codingage.ecommerce.repository.impl;
 
 import in.codingage.ecommerce.model.User;
 import in.codingage.ecommerce.repository.UseRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+
+@Repository
 public class UserRepositoryImpl implements UseRepository {
 
     List<User> userList = new ArrayList<>();

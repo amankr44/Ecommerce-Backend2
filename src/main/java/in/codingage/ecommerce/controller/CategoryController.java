@@ -3,6 +3,7 @@ package in.codingage.ecommerce.controller;
 import in.codingage.ecommerce.model.Category;
 
 import in.codingage.ecommerce.service.impl.CategoryServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -11,7 +12,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/category")
 public class CategoryController {
-    CategoryServiceImpl categoryService = new CategoryServiceImpl();
+
+//    CategoryServiceImpl categoryService = new CategoryServiceImpl();
+    @Autowired
+    private CategoryServiceImpl categoryService;
 
 
     @PostMapping
