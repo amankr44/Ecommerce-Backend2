@@ -1,7 +1,7 @@
 package in.codingage.ecommerce.service.impl;
 
 import in.codingage.ecommerce.model.Category;
-import in.codingage.ecommerce.model.Product;
+
 import in.codingage.ecommerce.repository.impl.CategoryRepositoryImpl;
 import in.codingage.ecommerce.service.CategoryService;
 
@@ -20,12 +20,12 @@ public class CategoryServiceImpl implements CategoryService {
         return categoryRepository.getAllCategory();
     }
 
-    public Category updateCategory(String type, List<Product> productList) {
-        return categoryRepository.updateCategory(type, productList);
+    public Category updateCategory(Category category) {
+        return categoryRepository.updateCategory(category);
     }
 
-    public Category deleteCategory(String type) {
-        return categoryRepository.deleteCategory(type);
+    public boolean deleteCategory(int categoryId) {
+        return categoryRepository.deleteCategory(categoryId);
     }
 
 }

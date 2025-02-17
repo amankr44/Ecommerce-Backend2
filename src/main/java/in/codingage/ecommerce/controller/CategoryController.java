@@ -1,7 +1,7 @@
 package in.codingage.ecommerce.controller;
 
 import in.codingage.ecommerce.model.Category;
-import in.codingage.ecommerce.model.Product;
+
 import in.codingage.ecommerce.service.impl.CategoryServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,11 +24,13 @@ public class CategoryController {
         return categoryService.getAllCategory();
     }
 
-    public Category updateCategory(String type, List<Product> productList){
-        return categoryService.updateCategory(type,productList);
+    @PutMapping
+    public Category updateCategory(@RequestBody Category category){
+        return categoryService.updateCategory(category);
     }
 
-    public Category deleteCategory(String type){
-        return categoryService.deleteCategory(type);
+    @DeleteMapping
+    public boolean deleteCategory(@RequestParam int categoryId){
+        return categoryService.deleteCategory(categoryId);
     }
 }

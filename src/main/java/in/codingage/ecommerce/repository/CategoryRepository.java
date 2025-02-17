@@ -1,7 +1,7 @@
 package in.codingage.ecommerce.repository;
 
 import in.codingage.ecommerce.model.Category;
-import in.codingage.ecommerce.model.Product;
+
 
 
 import java.util.List;
@@ -12,7 +12,7 @@ public interface CategoryRepository {
 
      List<Category> getAllCategory();
 
-    public Category updateCategory(String type, List <Product> productList);
+    public Category updateCategory(Category category);
 
-    public Category deleteCategory(String type);
+    public boolean deleteCategory(int categoryId);
 }

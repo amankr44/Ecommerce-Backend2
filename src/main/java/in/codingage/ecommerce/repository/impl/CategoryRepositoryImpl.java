@@ -4,7 +4,7 @@ package in.codingage.ecommerce.repository.impl;
 
 
 import in.codingage.ecommerce.model.Category;
-import in.codingage.ecommerce.model.Product;
+
 import in.codingage.ecommerce.repository.CategoryRepository;
 
 
@@ -27,31 +27,25 @@ public class CategoryRepositoryImpl implements CategoryRepository {
        return categoryList;
     }
 
-    public Category updateCategory(String type, List <Product> productList){
-        for(Category category : categoryList){
-            if(category.getCategoryType().equals(type)){
-                category.setCategoryType(type);
-                for(Product product : productList){
-                    if(category.getProductList().contains(product)){
-                        category.getProductList().remove(product);
-                        category.getProductList().add(product);
-                    }
-
-                }
+    public Category updateCategory(Category category){
+        for(Category category1 : categoryList){
+            if(category1.getCategoryId()==category.getCategoryId()){
+                category1.setCategoryType(category.getCategoryType());
+                category1.setProductList(category.getProductList());
                 return category;
             }
         }
         return null;
     }
 
-    public Category deleteCategory(String type){
+    public boolean deleteCategory(int categoryId){
         for(Category category : categoryList){
-            if(category.getCategoryType().equals(type)){
+            if(category.getCategoryId()==categoryId){
                 categoryList.remove(categoryList);
-                return category;
+                return true;
             }
         }
-        return null;
+        return false;
     }
 
 
