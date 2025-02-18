@@ -35,4 +35,8 @@ public class UserServiceImpl implements UserService {
     public boolean deleteUser(int userId) {
         return userRepository.deleteUser(userId);
     }
+
+    public User getUserDetail(String MobNo) {
+        return userRepository.getUserDetail(MobNo);
+    }
 }

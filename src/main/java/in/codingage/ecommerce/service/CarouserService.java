@@ -15,4 +15,6 @@ public interface CarouserService {
 
 
     Carouser createCarouser(Carouser carouser);
+
+    public Carouser getCarouserDetail(int id);
 }

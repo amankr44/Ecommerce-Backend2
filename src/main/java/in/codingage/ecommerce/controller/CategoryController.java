@@ -28,6 +28,11 @@ public class CategoryController {
         return categoryService.getAllCategory();
     }
 
+    @GetMapping("/categoryDetail")
+    public Category getCategoryDetail(@RequestParam int categoryId){
+        return categoryService.getCategoryDetail(categoryId);
+    }
+
     @PutMapping
     public Category updateCategory(@RequestBody Category category){
         return categoryService.updateCategory(category);

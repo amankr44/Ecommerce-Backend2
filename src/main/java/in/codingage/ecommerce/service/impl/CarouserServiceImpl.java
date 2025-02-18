@@ -39,4 +39,7 @@ public class CarouserServiceImpl implements CarouserService {
     }
 
 
+    public Carouser getCarouserDetail(int id) {
+        return carouserRepository.getCarouserDetail(id);
+    }
 }

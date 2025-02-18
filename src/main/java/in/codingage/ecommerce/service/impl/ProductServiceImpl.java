@@ -33,4 +33,8 @@ public class ProductServiceImpl implements ProductService {
     public boolean deleteProduct(int productId) {
         return productRepository.deleteProduct(productId);
     }
+
+    public Product getProductDetail(int productId) {
+        return productRepository.getProductDetail(productId);
+    }
 }

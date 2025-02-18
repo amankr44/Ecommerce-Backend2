@@ -26,6 +26,11 @@ public class ProductController {
         return productService.getAllProduct();
     }
 
+    @GetMapping("/productDetail")
+    public Product getProductDetail(@RequestParam int productId){
+        return productService.getProductDetail(productId);
+    }
+
     @PutMapping
     public Product updateProduct(@RequestBody Product product){
         return productService.updateProduct(product);

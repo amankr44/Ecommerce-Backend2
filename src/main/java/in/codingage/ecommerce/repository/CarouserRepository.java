@@ -14,4 +14,6 @@ public interface CarouserRepository {
     public boolean deleteCarouser(int id);
 
     void createCarouser(Carouser carouser);
+
+    public Carouser getCarouserDetail(int id);
 }

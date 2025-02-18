@@ -49,4 +49,13 @@ public class ProductRepositoryImpl implements ProductRepository {
         return false;
 
     }
+
+    public Product getProductDetail(int productId) {
+        for(Product product : productList){
+            if(product.getProductId()==productId){
+                return product;
+            }
+        }
+        return null;
+    }
 }

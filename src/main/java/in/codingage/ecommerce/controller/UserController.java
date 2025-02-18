@@ -26,6 +26,12 @@ public class UserController {
     }
 
 
+    @GetMapping("/detail")
+    public User getUserDetail(@RequestParam String MobNo){
+        return userService.getUserDetail(MobNo);
+    }
+
+
     @PutMapping
     public User updateUser(@RequestBody User user){
         return userService.updateUser(user);

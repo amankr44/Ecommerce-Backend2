@@ -48,5 +48,14 @@ public class CarouserRepositoryImpl implements CarouserRepository {
             carouserList.add(carouser);
         }
     }
+
+    public Carouser getCarouserDetail(int id) {
+        for(Carouser carouser : carouserList){
+            if(carouser.getId()==id){
+                return carouser;
+            }
+        }
+        return null;
+    }
 }
 

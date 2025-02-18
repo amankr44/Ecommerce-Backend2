@@ -15,4 +15,6 @@ public interface CategoryRepository {
     public Category updateCategory(Category category);
 
     public boolean deleteCategory(int categoryId);
+
+    public Category getCategoryDetail(int categoryId);
 }

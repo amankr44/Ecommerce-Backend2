@@ -13,4 +13,6 @@ public interface UseRepository {
     User updateUser(User user);
 
     boolean deleteUser(int userId);
+
+    public User getUserDetail(String MobNo);
 }

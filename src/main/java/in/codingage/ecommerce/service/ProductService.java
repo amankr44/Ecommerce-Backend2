@@ -13,4 +13,6 @@ public interface ProductService {
     Product updateProduct(Product product);
 
     boolean deleteProduct(int productId);
+
+    public Product getProductDetail(int productId);
 }

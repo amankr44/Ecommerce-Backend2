@@ -54,4 +54,13 @@ public class UserRepositoryImpl implements UseRepository {
         }
         return false;
     }
+
+    public User getUserDetail(String MobNo) {
+       for(User user : userList){
+           if (user.getMobNo().equals(MobNo)) {
+               return user;
+           }
+       }
+       return null;
+    }
 }

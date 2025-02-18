@@ -34,4 +34,7 @@ public class CategoryServiceImpl implements CategoryService {
         return categoryRepository.deleteCategory(categoryId);
     }
 
+    public Category getCategoryDetail(int categoryId) {
+        return categoryRepository.getCategoryDetail(categoryId);
+    }
 }

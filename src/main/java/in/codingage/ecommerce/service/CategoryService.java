@@ -14,4 +14,6 @@ public interface CategoryService {
     Category updateCategory(Category category);
 
     boolean deleteCategory(int categoryId);
+
+    public Category getCategoryDetail(int categoryId);
 }

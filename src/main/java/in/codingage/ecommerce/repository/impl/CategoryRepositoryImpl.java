@@ -51,4 +51,12 @@ public class CategoryRepositoryImpl implements CategoryRepository {
     }
 
 
+    public Category getCategoryDetail(int categoryId) {
+        for(Category category : categoryList){
+            if(category.getCategoryId()==categoryId){
+                return category;
+            }
+        }
+        return null;
+    }
 }

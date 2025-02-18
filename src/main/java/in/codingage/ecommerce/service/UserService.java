@@ -13,4 +13,6 @@ public interface UserService {
 
     boolean deleteUser(int userId);
 
+    public User getUserDetail(String MobNo);
+
 }

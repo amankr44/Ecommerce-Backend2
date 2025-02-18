@@ -25,6 +25,11 @@ public class CarouserController {
         return carouserService.getAllCarouser();
     }
 
+    @GetMapping("/carouserDetail")
+    public Carouser getCarouserDetail(@RequestParam int id){
+        return carouserService.getCarouserDetail(id);
+    }
+
     @PutMapping
     public Carouser updateCarouser(@RequestBody Carouser carouser){
         return carouserService.updateCarouser(carouser);

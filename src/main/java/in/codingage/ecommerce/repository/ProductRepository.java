@@ -13,4 +13,6 @@ public interface ProductRepository {
     public Product updateProduct(Product product);
 
     public boolean deleteProduct(int productId);
+
+    public Product getProductDetail(int productId);
 }
