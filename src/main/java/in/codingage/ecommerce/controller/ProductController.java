@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/product")
@@ -27,8 +28,13 @@ public class ProductController {
     }
 
     @GetMapping("/productDetail")
-    public Product getProductDetail(@RequestParam int productId){
-        return productService.getProductDetail(productId);
+    public Optional<Product> getProductDetail(@RequestParam String id){
+        return productService.getProductDetail(id);
+    }
+
+    @GetMapping("/title")
+    public Product findByTitle(@RequestParam String title){
+        return productService.findByTitle(title);
     }
 
     @PutMapping
@@ -38,7 +44,7 @@ public class ProductController {
 
 
     @DeleteMapping
-    public boolean deleteProduct(@RequestParam int productId){
-        return productService.deleteProduct(productId);
+    public void deleteProduct(@RequestParam String id){
+         productService.deleteProduct(id);
     }
 }

@@ -1,8 +1,12 @@
 package in.codingage.ecommerce.model;
 
-public class User {
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-    private int userId;
+@Document("/User")
+public class User {
+    @Id
+    private String id;
     private String firstName;
     private String lastName;
     private String MobNo;
@@ -10,12 +14,12 @@ public class User {
     private String password;
 
 
-    public int getUserId() {
-        return userId;
+    public String getId() {
+        return id;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getFirstName() {

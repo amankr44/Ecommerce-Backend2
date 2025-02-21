@@ -1,12 +1,13 @@
 package in.codingage.ecommerce.service.impl;
 
 import in.codingage.ecommerce.model.Product;
-import in.codingage.ecommerce.repository.impl.ProductRepositoryImpl;
+import in.codingage.ecommerce.repository.ProductRepository;
 import in.codingage.ecommerce.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -14,27 +15,31 @@ public class ProductServiceImpl implements ProductService {
 //    ProductRepositoryImpl productRepository = new ProductRepositoryImpl();
 
     @Autowired
-    private ProductRepositoryImpl productRepository;
+    private ProductRepository productRepository;
 
     public Product createProduct(Product product) {
-         productRepository.createProduct(product);
+         productRepository.save(product);
          return product;
 
     }
 
     public List<Product> getAllProduct() {
-        return productRepository.getAllProduct();
+        return productRepository.findAll();
     }
 
     public Product updateProduct(Product product) {
-        return productRepository.updateProduct(product);
+        return productRepository.save(product);
     }
 
-    public boolean deleteProduct(int productId) {
-        return productRepository.deleteProduct(productId);
+    public void deleteProduct(String id) {
+         productRepository.deleteById(id);
     }
 
-    public Product getProductDetail(int productId) {
-        return productRepository.getProductDetail(productId);
+    public Optional<Product> getProductDetail(String id) {
+        return productRepository.findById(id);
+    }
+
+    public Product findByTitle(String title) {
+        return productRepository.findByTitle(title);
     }
 }

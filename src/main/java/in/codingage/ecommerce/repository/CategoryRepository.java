@@ -1,20 +1,15 @@
 package in.codingage.ecommerce.repository;
 
 import in.codingage.ecommerce.model.Category;
-
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
 
 import java.util.List;
 
-public interface CategoryRepository {
+@Repository
+public interface CategoryRepository extends MongoRepository<Category,String> {
+    Category findByCategoryType(String categoryType);
 
-    public void createCategory(Category category);
 
-     List<Category> getAllCategory();
-
-    public Category updateCategory(Category category);
-
-    public boolean deleteCategory(int categoryId);
-
-    public Category getCategoryDetail(int categoryId);
 }

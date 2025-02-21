@@ -1,45 +1,50 @@
 package in.codingage.ecommerce.service.impl;
 
 import in.codingage.ecommerce.model.Carouser;
-import in.codingage.ecommerce.repository.impl.CarouserRepositoryImpl;
+import in.codingage.ecommerce.repository.CarouserRepository;
 import in.codingage.ecommerce.service.CarouserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CarouserServiceImpl implements CarouserService {
 //    CarouserRepositoryImpl carouserRepository = new CarouserRepositoryImpl();
 
     @Autowired
-    CarouserRepositoryImpl carouserRepository;
+    private CarouserRepository carouserRepository;
 
 
 
     public List<Carouser> getAllCarouser() {
-        return carouserRepository.getAllCarouser();
+        return carouserRepository.findAll();
     }
 
     public Carouser updateCarouser(Carouser carouser) {
-        return carouserRepository.updateCarouser(carouser);
+        return carouserRepository.save(carouser);
     }
 
     @Override
-    public boolean deleteCarouser(int id) {
-        return carouserRepository.deleteCarouser(id);
+    public void deleteCarouser(String id) {
+         carouserRepository.deleteById(id);
     }
 
 
 
     @Override
     public Carouser createCarouser(Carouser carouser) {
-        carouserRepository.createCarouser(carouser);
+        carouserRepository.save(carouser);
         return carouser;
     }
 
 
-    public Carouser getCarouserDetail(int id) {
-        return carouserRepository.getCarouserDetail(id);
+    public Optional<Carouser> getCarouserDetail(String id) {
+        return carouserRepository.findById(id);
+    }
+
+    public Carouser findCarouserByHeader(String header) {
+       return carouserRepository.findByHeader(header);
     }
 }

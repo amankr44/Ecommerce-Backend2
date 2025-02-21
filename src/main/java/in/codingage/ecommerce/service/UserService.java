@@ -3,6 +3,7 @@ package in.codingage.ecommerce.service;
 import in.codingage.ecommerce.model.User;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface UserService {
     User createUser(User user);
@@ -11,8 +12,10 @@ public interface UserService {
 
     User updateUser(User user);
 
-    boolean deleteUser(int userId);
+    void deleteUser(String id);
 
-    public User getUserDetail(String MobNo);
+    public Optional<User> getUserDetail(String id);
+
+    public User findByFirstName(String firstName);
 
 }

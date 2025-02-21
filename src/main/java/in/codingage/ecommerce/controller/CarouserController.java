@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/carouser")
@@ -26,8 +27,13 @@ public class CarouserController {
     }
 
     @GetMapping("/carouserDetail")
-    public Carouser getCarouserDetail(@RequestParam int id){
+    public Optional<Carouser> getCarouserDetail(@RequestParam String id){
         return carouserService.getCarouserDetail(id);
+    }
+
+    @GetMapping("/name")
+    public Carouser findCarouserByHeader(@RequestParam String header){
+        return carouserService.findCarouserByHeader(header);
     }
 
     @PutMapping
@@ -36,7 +42,7 @@ public class CarouserController {
     }
 
     @DeleteMapping
-    public boolean deleteCarouser(@RequestParam int id){
-        return carouserService.deleteCarouser(id);
+    public void deleteCarouser(@RequestParam String id){
+         carouserService.deleteCarouser(id);
     }
 }

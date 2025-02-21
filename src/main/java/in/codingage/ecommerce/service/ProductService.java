@@ -3,6 +3,7 @@ package in.codingage.ecommerce.service;
 import in.codingage.ecommerce.model.Product;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ProductService {
 
@@ -12,7 +13,9 @@ public interface ProductService {
 
     Product updateProduct(Product product);
 
-    boolean deleteProduct(int productId);
+    void deleteProduct(String id);
 
-    public Product getProductDetail(int productId);
+    public Optional<Product> getProductDetail(String id);
+
+    public Product findByTitle(String title);
 }

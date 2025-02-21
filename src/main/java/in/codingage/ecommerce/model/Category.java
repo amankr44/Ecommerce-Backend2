@@ -1,19 +1,24 @@
 package in.codingage.ecommerce.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Document("/Category")
 public class Category {
-    private int categoryId;
+    @Id
+    private String id;
     private String categoryType;
     private List<Product> productList= new ArrayList<>();
 
-    public int getCategoryId() {
-        return categoryId;
+    public String getId() {
+        return id;
     }
 
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getCategoryType() {

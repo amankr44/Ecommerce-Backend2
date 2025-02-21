@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/user")
@@ -27,8 +28,13 @@ public class UserController {
 
 
     @GetMapping("/detail")
-    public User getUserDetail(@RequestParam String MobNo){
-        return userService.getUserDetail(MobNo);
+    public Optional<User> getUserDetail(@RequestParam String id){
+        return userService.getUserDetail(id);
+    }
+
+    @GetMapping("/firstName")
+    public User findByFirstName(@RequestParam String firstName){
+        return userService.findByFirstName(firstName);
     }
 
 
@@ -39,7 +45,7 @@ public class UserController {
 
 
     @DeleteMapping
-    public boolean deleteUser(@RequestParam int userId){
-        return userService.deleteUser(userId);
+    public void deleteUser(@RequestParam String id){
+         userService.deleteUser(id);
     }
 }

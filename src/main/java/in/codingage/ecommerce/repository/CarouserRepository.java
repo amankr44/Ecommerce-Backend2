@@ -1,19 +1,13 @@
 package in.codingage.ecommerce.repository;
 
 import in.codingage.ecommerce.model.Carouser;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public interface CarouserRepository {
+@Repository
+public interface CarouserRepository extends MongoRepository<Carouser, String> {
+    Carouser findByHeader(String header);
 
-
-    List <Carouser> getAllCarouser();
-
-    public Carouser updateCarouser(Carouser carouser);
-
-    public boolean deleteCarouser(int id);
-
-    void createCarouser(Carouser carouser);
-
-    public Carouser getCarouserDetail(int id);
 }

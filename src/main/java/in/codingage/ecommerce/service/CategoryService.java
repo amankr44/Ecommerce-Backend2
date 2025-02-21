@@ -5,6 +5,7 @@ import in.codingage.ecommerce.model.Category;
 
 
 import java.util.List;
+import java.util.Optional;
 
 public interface CategoryService {
     Category createCategory(Category category );
@@ -13,7 +14,10 @@ public interface CategoryService {
 
     Category updateCategory(Category category);
 
-    boolean deleteCategory(int categoryId);
+   void deleteCategory(String id);
 
-    public Category getCategoryDetail(int categoryId);
+    public Optional<Category> getCategoryDetail(String id);
+
+    public Category findCategoryByType(String categoryType);
 }
+

@@ -1,7 +1,12 @@
 package in.codingage.ecommerce.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document("/Product")
 public class Product {
-    private int productId;
+    @Id
+    private String id;
     private String title;
     private String price;
     private String brand;
@@ -48,11 +53,12 @@ public class Product {
         this.offers = offers;
     }
 
-    public int getProductId() {
-        return productId;
+    public String getId() {
+        return id;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setId(String id) {
+        this.id = id;
     }
+
 }

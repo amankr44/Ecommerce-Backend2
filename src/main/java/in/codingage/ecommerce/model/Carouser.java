@@ -3,10 +3,13 @@ package in.codingage.ecommerce.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-
+@Document("/Carouser")
 public class Carouser {
-    private  int id;
+    @Id
+    private String id;
     private String header;
     private String subHeader;
     private String backGroundUrl;
@@ -35,11 +38,11 @@ public class Carouser {
         this.backGroundUrl = backGroundUrl;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 }

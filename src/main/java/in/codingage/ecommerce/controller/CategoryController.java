@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/category")
@@ -29,8 +30,13 @@ public class CategoryController {
     }
 
     @GetMapping("/categoryDetail")
-    public Category getCategoryDetail(@RequestParam int categoryId){
-        return categoryService.getCategoryDetail(categoryId);
+    public Optional<Category> getCategoryDetail(@RequestParam String id){
+        return categoryService.getCategoryDetail(id);
+    }
+
+    @GetMapping("/categoryType")
+    public Category findCategoryByType(@RequestParam String categoryType){
+        return categoryService.findCategoryByType(categoryType);
     }
 
     @PutMapping
@@ -39,7 +45,7 @@ public class CategoryController {
     }
 
     @DeleteMapping
-    public boolean deleteCategory(@RequestParam int categoryId){
-        return categoryService.deleteCategory(categoryId);
+    public void deleteCategory(@RequestParam String id){
+        categoryService.deleteCategory(id);
     }
 }
