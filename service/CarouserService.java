@@ -1,7 +1,6 @@
 package in.codingage.ecommerce.service;
 
 import in.codingage.ecommerce.model.Carouser;
-import org.springframework.data.domain.Page;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,7 +8,7 @@ import java.util.Optional;
 public interface CarouserService {
 
 
-    Page<Carouser> getAllCarouser(int pageNo, int pageSize);
+    List<Carouser> getAllCarouser();
 
     Carouser updateCarouser(Carouser carouser);
 
@@ -21,6 +20,4 @@ public interface CarouserService {
     public Optional<Carouser> getCarouserDetail(String id);
 
     public Carouser findCarouserByHeader(String header);
-
-   void saveCarousers();
 }

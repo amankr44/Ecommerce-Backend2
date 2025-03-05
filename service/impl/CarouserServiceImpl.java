@@ -4,9 +4,6 @@ import in.codingage.ecommerce.model.Carouser;
 import in.codingage.ecommerce.repository.CarouserRepository;
 import in.codingage.ecommerce.service.CarouserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,9 +18,8 @@ public class CarouserServiceImpl implements CarouserService {
 
 
 
-    public Page<Carouser> getAllCarouser(int pageNo, int pageSize) {
-       Pageable pageRequest = PageRequest.of(pageNo,pageSize);
-        return carouserRepository.findAll(pageRequest);
+    public List<Carouser> getAllCarouser() {
+        return carouserRepository.findAll();
     }
 
     public Carouser updateCarouser(Carouser carouser) {
@@ -51,14 +47,4 @@ public class CarouserServiceImpl implements CarouserService {
     public Carouser findCarouserByHeader(String header) {
        return carouserRepository.findByHeader(header);
     }
-
-    @Override
-    public void saveCarousers() {
-         for(int i =1; i<=1000;i++){
-             Carouser carouser = new Carouser();
-             carouser.setHeader(String.format("slides : %d",i));
-             carouserRepository.save(carouser);
-         }
-    }
-
 }

@@ -1,6 +1,5 @@
 package in.codingage.ecommerce.service.impl;
 
-import in.codingage.ecommerce.exception.ProductNotFoundException;
 import in.codingage.ecommerce.model.User;
 import in.codingage.ecommerce.repository.UserRepository;
 import in.codingage.ecommerce.service.UserService;
@@ -45,6 +44,6 @@ public class UserServiceImpl implements UserService {
     }
 
     public User findByFirstName(String firstName) {
-        return userRepository.findByFirstName(firstName).orElseThrow(()->new ProductNotFoundException("User not found"));
+        return userRepository.findByFirstName(firstName);
     }
 }

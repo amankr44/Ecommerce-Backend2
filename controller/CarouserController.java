@@ -2,8 +2,8 @@ package in.codingage.ecommerce.controller;
 
 import in.codingage.ecommerce.model.Carouser;
 import in.codingage.ecommerce.service.CarouserService;
+import in.codingage.ecommerce.service.impl.CarouserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,15 +23,9 @@ public class CarouserController {
         return carouserService.createCarouser(carouser);
     }
 
-    @PostMapping("/save/all")
-    public void saveCarousers(){
-         carouserService.saveCarousers();
-    }
-
     @GetMapping
-    public Page<Carouser> getAllCarouser(@RequestParam int pageNo, @RequestParam int pageSize){
-        return carouserService.getAllCarouser(pageNo,pageSize);
-
+    public List<Carouser> getAllCarouser(){
+        return carouserService.getAllCarouser();
     }
 
     @GetMapping("/carouserDetail")
